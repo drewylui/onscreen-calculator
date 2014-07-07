@@ -13,7 +13,7 @@ function my_max (array) {
 function vowel_count (string) {
 	var vowelCount = 0;
 	stringArray = string.split("");
-	for (i=1; i<stringArray.length; i++) {
+	for (i=0; i<stringArray.length; i++) {
 		if ((stringArray[i].toLowerCase() === "a") || 
 			(stringArray[i].toLowerCase() === "e") ||
 			(stringArray[i].toLowerCase() === "i") ||
@@ -23,4 +23,13 @@ function vowel_count (string) {
 			}
 	}
 	return vowelCount;	
+}
+
+function reverse (string) {
+	var reversedString = "";
+	stringArray = string.split("");
+	for (i=0; i<stringArray.length; i++) {
+		reversedString = reversedString.concat(stringArray[i]);
+	}
+	return reversedString;
 }
