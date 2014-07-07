@@ -1,4 +1,6 @@
-
+/* 
+These are the warmup exercises
+*/
 
 function my_max (array) {	
 	var max = 0;
@@ -11,18 +13,8 @@ function my_max (array) {
 }
 
 function vowel_count (string) {
-	var vowelCount = 0;
-	stringArray = string.split("");
-	for (i=0; i<stringArray.length; i++) {
-		if ((stringArray[i].toLowerCase() === "a") || 
-			(stringArray[i].toLowerCase() === "e") ||
-			(stringArray[i].toLowerCase() === "i") ||
-			(stringArray[i].toLowerCase() === "o") ||
-			(stringArray[i].toLowerCase() === "u")) {
-				vowelCount++;
-			}
-	}
-	return vowelCount;	
+	stringArray=string.match(/[a|e|i|o|u]/gi);
+	return stringArray.length;	
 }
 
 function reverse (string) {
@@ -33,3 +25,12 @@ function reverse (string) {
 	}
 	return reversedString;
 }
+
+/* 
+Start of functions for calculator
+*/
+
+function add (number1, number2) {
+	return number1 + number2;
+}
+
