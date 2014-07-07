@@ -1,0 +1,26 @@
+
+
+function my_max (array) {	
+	var max = 0;
+	for (i=1; i<array.length; i++) {
+		if (array[i] > max) {
+			max = array[i];
+		}
+	}
+	return max;
+}
+
+function vowel_count (string) {
+	var vowelCount = 0;
+	stringArray = string.split("");
+	for (i=1; i<stringArray.length; i++) {
+		if ((stringArray[i].toLowerCase() === "a") || 
+			(stringArray[i].toLowerCase() === "e") ||
+			(stringArray[i].toLowerCase() === "i") ||
+			(stringArray[i].toLowerCase() === "o") ||
+			(stringArray[i].toLowerCase() === "u")) {
+				vowelCount++;
+			}
+	}
+	return vowelCount;	
+}
