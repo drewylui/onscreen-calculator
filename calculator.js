@@ -1,3 +1,33 @@
+
+/* 
+Start of functions for calculator
+*/
+
+function test () {
+	alert("test worked!");
+}
+
+function add (number1, number2) {
+	return number1 + number2;
+}
+
+function multiply (number1, number2) {
+	return number1 * number2;
+}
+
+function divide (number1, number2) {
+	return number1 / number2;
+}
+
+function subtract (number1, number2) {
+	return number1 - number2;
+}
+
+
+/* 
+These are test functions
+*/
+
 /* 
 These are the warmup exercises
 */
@@ -25,12 +55,3 @@ function reverse (string) {
 	}
 	return reversedString;
 }
-
-/* 
-Start of functions for calculator
-*/
-
-function add (number1, number2) {
-	return number1 + number2;
-}
-

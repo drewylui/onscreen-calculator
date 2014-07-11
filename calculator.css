@@ -1,0 +1,14 @@
+.button {
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 2px grey solid;
+}
+
+.row {
+	margin-right: auto;
+	margin-left: auto;
+	width: 500px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
