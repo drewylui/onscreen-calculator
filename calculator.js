@@ -41,6 +41,24 @@ function storeValue(element) {
 
 }
 
+// checks an array for number * number or number / number and replaces the three elements with a single element that is the result
+function resolveMultiplyDivide(array) {
+	total = 0;
+	for (i=0; i<array.length; i++) {		
+			if (array[i] === "*") {
+				total = multiply(parseInt(inputArray[i-1]), parseInt(inputArray[i+1]));
+				array[i-1] = total;
+				array.splice(i,2);
+			}
+			if (array[i] === "/") {
+				total = divide(parseInt(inputArray[i-1]), parseInt(inputArray[i+1]));
+				array[i-1] = total;
+				array.splice(i,2);
+			}
+	}
+}
+
+
 function calculate() {
 	var inputString = "";
 
@@ -53,10 +71,13 @@ function calculate() {
 	// Check the first input. If it is an empty string, then the first input was not a number, due to the way that storeValue builds the array.
 	if (inputArray[0] === "") {		
 		alert("Error: Cannot calculate total as the first input is not a number. Try again.");
-		clear();
+		clearValues();
 	}
 	else {
-		// Set the first number
+		// resolve multiply and divide operations first
+		resolveMultiplyDivide(inputArray);
+
+		// Set the total equal to the first number
 		var total = parseInt(inputArray[0]);
 		// Iterate through the rest of the numbers
 		for (i=0; i<inputArray.length; i++) {		
@@ -79,13 +100,13 @@ function calculate() {
 
 			console.log(inputArray[i].toString());	
 		}
+
+		alert("Total = " + total.toString());
+		clearValues();
 	}
-
-	console.log(total);
-
 }
 
-function clear () {
+function clearValues() {
 	inputArray = [];
 	numString = "";
 	total = 0;
