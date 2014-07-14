@@ -1,16 +1,10 @@
-
-/* TO DO
-- build the calculator HTML via a function, rather than manually typing in divs.
-*/
-
 /* 
 Start of code for calculator
 */
 
-// Declare array to hold values of calculator button presses
-var inputArray = [];
-var numString = "";
-var total = 0;
+var inputArray = []; // Holds values of calculator button presses
+var numString = ""; // Holds multi-digit numbers
+var total = 0; // Running total
 
 // Stores the contents of the HTML element passed to it as a string array. Called from click events on the divs in calculator.html
 function storeValue(element) {	
@@ -44,15 +38,15 @@ function storeValue(element) {
 
 // checks an array for number * number or number / number and replaces the three elements with a single element that is the result
 function resolveMultiplyDivide(array) {
-	total = 0;
+	total = 0.0;
 	for (i=0; i<array.length; i++) {		
 			if (array[i] === "*") {
-				total = multiply(parseInt(inputArray[i-1]), parseInt(inputArray[i+1]));
+				total = multiply(parseFloat(inputArray[i-1]), parseFloat(inputArray[i+1]));
 				array[i-1] = total;
 				array.splice(i,2);
 			}
 			if (array[i] === "/") {
-				total = divide(parseInt(inputArray[i-1]), parseInt(inputArray[i+1]));
+				total = divide(parseFloat(inputArray[i-1]), parseFloat(inputArray[i+1]));
 				array[i-1] = total;
 				array.splice(i,2);
 			}
@@ -79,7 +73,7 @@ function calculate() {
 		resolveMultiplyDivide(inputArray);
 
 		// Set the total equal to the first number
-		var total = parseInt(inputArray[0]);
+		var total = parseFloat(inputArray[0]);
 		// Iterate through the rest of the numbers
 		for (i=0; i<inputArray.length; i++) {		
 
