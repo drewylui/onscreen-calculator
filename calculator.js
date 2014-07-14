@@ -10,27 +10,28 @@ Start of code for calculator
 // Declare array to hold values of calculator button presses
 var inputArray = [];
 var numString = "";
+var total = 0;
 
-// Stores the contents of the HTML element passed to it. Called from click events on the divs in calculator.html
+// Stores the contents of the HTML element passed to it as a string array. Called from click events on the divs in calculator.html
 function storeValue(element) {	
 
 	if (element.innerHTML === "+") {
-		inputArray.push(parseInt(numString));
+		inputArray.push(numString);
 		inputArray.push(element.innerHTML);
 		numString = "";
 	} 
 	else if (element.innerHTML === "-") {
-		inputArray.push(parseInt(numString));
+		inputArray.push(numString);
 		inputArray.push(element.innerHTML);
 		numString = "";
 	}
 	else if (element.innerHTML === "*") {
-		inputArray.push(parseInt(numString));
+		inputArray.push(numString);
 		inputArray.push(element.innerHTML);
 		numString = "";
 	}
 	else if (element.innerHTML === "/") {
-		inputArray.push(parseInt(numString));
+		inputArray.push(numString);
 		inputArray.push(element.innerHTML);
 		numString = "";
 	}
@@ -38,6 +39,56 @@ function storeValue(element) {
 		numString = numString + element.innerHTML;
 	}
 
+}
+
+function calculate() {
+	var inputString = "";
+
+	// Add the last number to the inputArray, since storeValue() does not add it
+	if (numString != "") {
+		inputArray.push(numString);
+		numString = "";
+	}
+
+	// Check the first input. If it is an empty string, then the first input was not a number, due to the way that storeValue builds the array.
+	if (inputArray[0] === "") {		
+		alert("Error: Cannot calculate total as the first input is not a number. Try again.");
+		clear();
+	}
+	else {
+		// Set the first number
+		var total = parseInt(inputArray[0]);
+		// Iterate through the rest of the numbers
+		for (i=0; i<inputArray.length; i++) {		
+
+			if (inputArray[i] === "+") {
+				total = add(total, parseInt(inputArray[i+1]));
+			}
+			else if (inputArray[i] === "-") {
+				total = subtract(total, parseInt(inputArray[i+1]));
+			}
+			else if (inputArray[i] === "*") {
+				total = multiply(total, parseInt(inputArray[i+1]));
+			}
+			else if (inputArray[i] === "/") {
+				total = divide(total, parseInt(inputArray[i+1]));
+			}
+			else {
+
+			}	
+
+			console.log(inputArray[i].toString());	
+		}
+	}
+
+	console.log(total);
+
+}
+
+function clear () {
+	inputArray = [];
+	numString = "";
+	total = 0;
 }
 
 function add (number1, number2) {
@@ -55,23 +106,6 @@ function divide (number1, number2) {
 function subtract (number1, number2) {
 	return number1 - number2;
 }
-
-function calculate() {
-	var inputString = "";
-
-	// Add the last number to the inputArray, since storeValue() cannot add it
-	if (numString != "") {
-		inputArray.push(numString);
-		numString = "";
-	}
-
-	for (i=0; i<inputArray.length; i++) {		
-	
-		console.log(inputArray[i].toString());
-	}
-
-}
-
 
 /* 
 These are test functions
