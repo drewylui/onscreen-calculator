@@ -37,6 +37,7 @@ function storeValue(element) {
 	}
 	else {
 		numString = numString + element.innerHTML;
+		$("#result").html(numString);
 	}
 
 }
@@ -101,8 +102,10 @@ function calculate() {
 			console.log(inputArray[i].toString());	
 		}
 
-		alert("Total = " + total.toString());
-		clearValues();
+		$("#result").html(total.toString());
+		inputArray = [];
+		numString = "";
+		total = 0;
 	}
 }
 
@@ -110,6 +113,7 @@ function clearValues() {
 	inputArray = [];
 	numString = "";
 	total = 0;
+	$("#result").html("");
 }
 
 function add (number1, number2) {

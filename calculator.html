@@ -6,10 +6,13 @@
 		</title>
 		<link type="text/css" rel="stylesheet" href="calculator.css">
 		<script type="text/javascript" src="calculator.js"></script> 
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->	    
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>	    
 	</head>
 
 	<body>
+		<div class="row">	
+			<div id="result"></div>			
+		</div>
 		<div class="row">
 			<div class="button" onclick="storeValue(this)">1</div>
 			<div class="button" onclick="storeValue(this)">2</div>
@@ -35,6 +38,6 @@
 		<div class="row">	
 			<div class="button footer-button" onclick="calculate()">=</div>
 			<div class="button footer-button" onclick="clearValues()">Clear</div>				
-		</div>		
+		</div>
 	</body>	
 </html>

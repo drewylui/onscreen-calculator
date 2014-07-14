@@ -8,8 +8,8 @@
 	width: 20px;
 	height: 30px;
 	border: 2px grey solid;
-	background: #555555;
 	border-radius: 10px; 
+	background: #555555;
 	cursor: pointer;
 	text-align: center;
 	font-family: garamond, sans-serif;
@@ -34,7 +34,20 @@
 }
 
 .footer-button {
-	width: 42px;
+	width: 67px;
 	background: #EEEEEE;
 	color: black;
+}
+
+#result {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 10px;
+	width: 174px;
+	height: 30px;
+	border: 4px grey solid;
+	border-radius: 10px; 
+	font-family: garamond, sans-serif;
+	font-weight: bold;	
+	font-size: 24px;
 }
