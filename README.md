@@ -1,7 +1,7 @@
 onscreen-calculator
 ===================
 
-**Deprecated in favour of this repository: [code-sydney repository] (https://github.com/drewylui/code-sydney)**
+**Deprecated in favour of this repository: [code-sydney repository](https://github.com/drewylui/code-sydney)**
 
 On Screen Calculator project for Odin Project. Week 1 exercise: http://codesydney.com/schedule/
 
